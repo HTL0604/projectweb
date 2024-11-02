@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence
+                                 https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
+	version="3.0">
+
+	<persistence-unit name="my-persistence-unit"
+		transaction-type="RESOURCE_LOCAL">
+		<!-- Specify your entity classes -->
+		<class>UTESHOP.entity.Category</class>
+		<class>UTESHOP.entity.User</class>
+		<class>UTESHOP.entity.UserLevel</class>
+		<class>UTESHOP.entity.Store</class>
+		<class>UTESHOP.entity.StoreLevel</class>
+		<class>UTESHOP.entity.Commision</class>
+		<class>UTESHOP.entity.Style</class>
+		<class>UTESHOP.entity.StyleValue</class>
+		<class>UTESHOP.entity.Product</class>
+		<class>UTESHOP.entity.Delivery</class>
+		<class>UTESHOP.entity.UserFollowStore</class>
+		<class>UTESHOP.entity.UserFollowProduct</class>
+		<class>UTESHOP.entity.Review</class>
+		<class>UTESHOP.entity.Order</class>
+		<class>UTESHOP.entity.OrderItem</class>
+		<class>UTESHOP.entity.Cart</class>
+		<class>UTESHOP.entity.CartItem</class>
+		<class>UTESHOP.entity.Transaction</class>
+		<!-- Database connection details -->
+		<properties>
+			<property name="jakarta.persistence.jdbc.url"
+				value="jdbc:mysql://localhost:3306/projectfinal" />
+			<property name="jakarta.persistence.jdbc.user" value="root" />
+			<property name="jakarta.persistence.jdbc.password"
+				value="UTE@123." />
+			<property name="jakarta.persistence.jdbc.driver"
+				value="com.mysql.cj.jdbc.Driver" />
+
+			<!-- Hibernate-specific properties -->
+			<property name="hibernate.dialect"
+				value="org.hibernate.dialect.MySQL8Dialect" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+
+		</properties>
+	</persistence-unit>
+</persistence>
